@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email de contact</title>
+</head>
+<body>
+    <table style="font-family: Verdana, sans-serif; color: #00055d; background-color: #f9f9ff; width: 100%;">
+        <tr>
+            <th></th>
+            <th align='center' style="min-height: 90px;">
+                <a style="text-decoration: none !important; color: #00055d;" href="www.auribail-mx-park.local/">
+                    <img style="display: block; padding-bottom: 5px;" src="{{ email.image('@images/motocross-logo.png') }}" alt="Logo">
+        	    	Auribail MX Park
+                </a>
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+            <td align='center' style="background-color: #00055d; border-radius: 2%; min-height: 180px; width: 80%;color: #f9f9ff;">
+                <table style="width: 100%">
+                    <tr align='center'>
+                        <td><h1>{{ contact.subject | nl2br }}</h1></td>
+                    </tr>
+                    <tr align='center'>
+                        <td><p>{{ contact.message | nl2br }}</p></td>
+                    </tr>
+                </table>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td align='center' style="min-height: 80px;">L'équipe de Auribail MX Park vous souhaite de passer une belle journée !</div>	
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{% extends 'admin-base.html.twig' %}
+
+{% block title %}MX Park | Admin{% endblock %}
+
+{% block body %}
+  {# <div class="container"> #}
+    <div class="row">
+      <div class="col-12 col-lg-9">
+        <h1 class="h2 mt-4 mb-4">Prochains Entrainements</h1>
+        <table class="table table-striped mb-4">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Nom</th>
+              <th>Type</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for event in events %}
+              <tr>
+                <td>{{ event.date ? event.date|date('d/m/Y H:i:s') : '' }}</td>
+                <td>{{ event.name }}</td>
+                <td>{{ event.type ? 'Adulte' : 'Kids' }}</td>
+                <td>
+                  <a class="btn btn-primary btn-sm" href="{{ path('event_show', {'id': event.id, 'from':'admin'}) }}">
+                    <i class="fas fa-info-circle"></i>
+                  </a>
+                  <a class="btn btn-warning btn-sm" href="{{ path('event_edit', {'id': event.id, 'from':'admin'}) }}">
+                    <i class="far fa-edit"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td colspan='2'>
+                  {% if event.type == false %}
+                    {% set limit = 15 %}
+                  {% else %}
+                    {% set limit = 75 %}
+                  {% endif %}
+                  {% set pourcent = (event.nbusers) / limit * 100 %}
+
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped {% if event.nbusers >= limit %} bg-danger {% else %} bg-info {% endif %}" role="progressbar" style="width: {{ pourcent }}%" aria-valuenow="{{ event.nbusers }}" aria-valuemin="0" aria-valuemax="100">
+                      {% if event.nbusers >= limit %}
+                        Complet
+                      {% else %}
+                        {{ event.nbusers }}
+                        inscrits
+                      {% endif %}
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            {% else %}
+              <tr>
+                <td colspan="4">no records found</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 col-lg-3 mb-4">
+        <h1 class="h2 mt-4 mb-4">Réseaux Sociaux</h1>
+        <div class="d-flex flex-column align-items-center">
+          <div class="fb-share-button mb-4" data-href="http://www.auribail-mx-park.local" data-layout="button" data-size="large">
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.auribail-mx-park.local%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a>
+          </div>
+          <div>
+            <a href="https://twitter.com/intent/tweet?button_hashtag=AuribailMXPark&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="Nouvelle session d&#39;entrainement !" data-url="http://www.auribail-mx-park.local/" data-lang="fr" data-show-count="false">Twitter</a>
+            <script async="async" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 bg-light border">
+        <h1 class="h2 mt-4 mb-4">Animation Editoriale du Carrousel</h1>
+        {{ include('admin/_form_carousel.html.twig', {'button_label': 'Update'}) }}
+      </div>
+    </div>
+  {# </div> #}
+{% endblock %}

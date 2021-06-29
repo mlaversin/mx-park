@@ -1,0 +1,219 @@
+/* ********************************* Flow stuff: ********************************* */
+html {
+  /* Scroll style: */
+  overflow: hidden;
+  /* padding-top: 15vh; */
+}
+body {
+  font-family: "Lexend", sans-serif;
+  background-color: #eaeae3;
+  overflow: hidden;
+  padding-top: 10vh;
+}
+.scroll-container {
+  width: 100%;
+  /* This line is essential, unless you want all the scroll functions to shut down: */
+  height: 95vh;
+  /* height: 680px; */
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  /* invisible scrollbar: */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+/* This takes the alerts off the normal flow */
+.alert {
+  position: absolute !important;
+  top: 70px !important;
+  right: 0;
+  /* width: 100%; */
+  z-index: 100;
+}
+
+/* **************************************** Navbar style : ************************************ */
+/* - active/inactive buttons (works with scrollspy in the html): */
+.navbar-nav li > a {
+  color: #333;
+  transition: background-color 0.2s, color 0.2s;
+}
+.navbar-nav li > a:hover {
+  color: #757575;
+}
+.navbar-nav li.active > a {
+  color: #fff;
+}
+/* - the logo is too big: */
+.my-logo {
+  max-height: 60px;
+}
+.navbar-brand {
+  max-height: 70px;
+}
+
+/* ********************************** Small style changes for random stuff *********************** */
+/* Needed for the map: */
+/* Set the size of the div element that contains the map */
+#map {
+  height: 88%;
+  width: 100%;
+}
+.my-nav-color {
+  background-color: #fcfbf3;
+}
+.my-footer {
+  font-size: 0.8rem;
+}
+/* My images must be darkened so that the captions can be read */
+.my-img {
+  filter: brightness(50%);
+}
+.super-light-bg {
+  background-image: url('/build/wallpaper-motocross.png');
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.genius-light-bg {
+  background-image: url('/build/motocross-sky.png');
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Borders for the divider */
+.line-left {
+  /* text-align: justify;
+  text-align-last: left; */
+  border-left: 2px dotted rgb(0, 0, 0);
+}
+.line-top {
+  /* text-align: justify;
+  text-align-last: left; */
+  border-top: 2px dotted rgb(0, 0, 0);
+}
+
+/* ******************************** Page content style (with flex!): ************************** */
+.flex-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5vh;
+  /* this line + the equivalent in media-query page will seriously mess with the responsiveness
+    (sections overlapping because of relative measure vh): */
+  /* height: 95vh; */
+  min-height: 500px;
+}
+.flex-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  min-height: 300px;
+  padding: 5px;
+}
+.flex-card{
+  border-radius: 1%;
+  border: 1px solid #bbb;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+}
+.flex-title{
+  border-bottom: 1px solid #bbb;
+  font-size: 2rem;
+  padding: 5px;
+}
+.flex-element{
+  margin: auto;
+  padding: 7px;
+  padding-top: 0%;
+}
+.flex-footer{
+  border-top: 1px solid #bbb;
+  padding: 5px;
+  background-color: rgb(245, 245, 245);
+}
+.d-flex{
+  flex-direction: column;
+}
+.flex-gauge{
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+/* ****************************************** Responsiveness ! ************************************* */
+/* Here is some responsiveness for the indicative arrow */
+@media only screen and (max-width: 924px) {
+  .my-scroll-down-arrow {
+    display: none;
+    visibility: collapse;
+  }
+}
+@media only screen and (min-width: 924px) {
+  .my-scroll-down-arrow {
+    display: block;
+    position: absolute;
+    bottom: 3vh;
+    right: 5vh;
+    z-index: 100;
+  }
+}
+/* Responsive carousel */
+@media only screen and (min-width: 1200px) and (max-height: 695px), 
+  only screen and (max-width:1199px) and (max-height: 650px),
+  only screen and (max-width:767px) {
+  .flex-carousel {
+    display: none !important;
+  }
+}
+
+/* Snap scroll: */
+@media only screen and (min-width: 1000px) {
+  .page {
+    scroll-snap-align: center;
+    /* this line + the equivalent in flex-section will seriously mess with the responsiveness
+    (sections overlapping because of relative measure vh): */
+    /* height: 100vh;  */
+    min-height: 800px; /*700*/
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .flex-container{
+    padding-top: 10vh;
+  }
+  .pageMobileCard {
+    scroll-snap-align: center;
+    /* min-height: 300px; */
+    /* margin-bottom: 5vh; */
+  }
+  .pageMobile {
+    scroll-snap-align: center;
+    /* min-height: 300px; */
+    padding-top: 2vh;
+  }
+  /* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+  .super-light-bg {
+    background-attachment: scroll;
+  }
+  .genius-light-bg {
+    background-attachment: scroll;
+  }
+}
+footer {
+  scroll-snap-align: end;
+}
+.extra {
+  scroll-snap-align: start;
+}
