@@ -1,9 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{# TODO bonus see request Lionel #}
-{# TODO bonus flash lionel annulation événement #}
-{# TODO bonus taille de police titres responsive #}
-
 {% block stylesheets %}
 
   <!-- links calendar (beware, the order jquery - popper - bootstrap.js - bootstrap is important as well as their presence in the header -->
@@ -39,10 +35,10 @@
   <!-- <div class="alert alert-primary alert-dismissible fade show" role="alert"> <strong>Pas d'événement dimanche prochain !</strong> L'événement est reporté au dimanche ../.... à cause des intempéries prévues ce dimanche. <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div> -->
   <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
   <!-- PAGE D'ACCUEIL -->
-  <section class="flex-section container page" id="accueil">
+  <section class="flex-section page" id="accueil">
     <!-- Le carousel de posters :) -->
     <div class="flex-carousel">
-      <div class="carousel slide pt-2 mt-2 mb-0" id="my-carousel">
+      <div class="carousel slide" id="my-carousel">
         <ul class="carousel-indicators">
           <li data-slide-to="0" data-target="#my-carousel" class="active"></li>
           <li data-slide-to="1" data-target="#my-carousel"></li>
@@ -70,7 +66,7 @@
                 {% if animation.carouselMessage2 is defined %}
                   {{ animation.carouselMessage2 }}
                 {% else %}
-                  Entrainement tous les premiers dimanches du mois !
+                  Entraînement tous les premiers dimanches du mois !
                 {% endif %}
               </h1>
             </div>
@@ -82,7 +78,7 @@
                 {% if animation.carouselMessage3 is defined %}
                   {{ animation.carouselMessage3 }}
                 {% else %}
-                  Entrainement tous les premiers dimanches du mois !
+                  Entraînement tous les premiers dimanches du mois !
                 {% endif %}
               </h1>
             </div>
@@ -94,7 +90,7 @@
                 {% if animation.carouselMessage4 is defined %}
                   {{ animation.carouselMessage4 }}
                 {% else %}
-                  Entrainement tous les premiers dimanches du mois !
+                  Entraînement tous les premiers dimanches du mois !
                 {% endif %}
               </h1>
             </div>
@@ -174,13 +170,13 @@
   <!-- PAGE CLUB -->
   <section class="container-fluid page flex-section super-light-bg" id="club">
     <div class="flex-container">
-      <div class="pageMobile text-center flex-divider">
+      <div class="pageMobile text-center flex-divider mr-5">
         <h1>Auribail MX Park</h1>
         <div class="flex-element">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.802138413488!2d-1.641914684472197!3d48.133338979223076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDA4JzAwLjAiTiAxwrAzOCcyMy4wIlc!5e0!3m2!1sfr!2sfr!4v1622392853947!5m2!1sfr!2sfr" width="270" height="250" class="border border-dark" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
-      <div class="ml-2 pl-2 pt-2 flex-divider">
+      <div class="pl-5 pt-2 flex-divider">
         <p class="pageMobile">
           <strong>Circuit et commodités :</strong>
           <br/>

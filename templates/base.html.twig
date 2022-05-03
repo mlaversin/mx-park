@@ -7,7 +7,7 @@
       {% block title %}MX park{% endblock %}
     </title>
 
-	{# description of the website for facebook sharer #}
+	  {# description of the website for facebook sharer #}
     <meta property="og:url" content="http://www.auribail-mx-park.local"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Auribail MX Park"/>
@@ -43,7 +43,8 @@
     <div data-spy="scroll" data-target=".navbar" data-offset="150" class="scroll-container mx-px-0" id="scrollContainer">
       <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
       <!-- NAVBAR -->
-      <nav class="navbar navbar-expand-md fixed-top navbar-light my-nav-color my-0 py-0 shadow-sm">
+
+      <nav class="navbar navbar-expand-md fixed-top navbar navbar-dark bg-dark my-0 py-0 shadow-sm">
         {# <div class="container"> #}
         <a class="navbar-brand" href="{{ path('home') }}">
           <img class="img-fluid my-logo mr-3" src="{{ absolute_url(asset("/build/motocross-logo.png")) }}" alt="Logo motocross">
@@ -77,6 +78,7 @@
         </div>
         {# </div> #}
       </nav>
+
 
       {# Alert for a successful action #}
       {% for message in app.flashes('success') %}
