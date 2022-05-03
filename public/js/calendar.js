@@ -1,6 +1,5 @@
 // "use strict"
 let dt = new Date()
-console.log(dt)
 let my_data = document.getElementById("hereData")
 let tooltip_text1 = ""
 let tooltip_text2 = ""
@@ -126,4 +125,3 @@ $(document).ready(function () {
 function goTooltip() {
   $("[data-toggle='tooltip']").tooltip()
 }
-

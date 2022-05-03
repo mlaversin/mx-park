@@ -36,7 +36,7 @@
 
     <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-md navbar-light my-nav-color my-0 py-0">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary my-nav-color my-0 py-0">
       {# <div class="container"> #}
       <a class="navbar-brand text-white" href="{{ path('admin') }}">
         <img class="img-fluid my-logo mr-3" src="{{ absolute_url(asset("/build/motocross-logo.png")) }}" alt="Logo motocross">
@@ -54,7 +54,7 @@
             <a class="nav-link" href="/admin/user">Membres</a>
           </li>
           <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-            <a class="nav-link" href="/admin/event">Entrainements</a>
+            <a class="nav-link" href="/admin/event">Entraînements</a>
           </li>
           <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
             <a class="nav-link" href="/admin/settings">Settings</a>
@@ -62,7 +62,7 @@
           <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
               {% if is_granted('ROLE_ADMIN') %}
-                <a class="text-white btn btn-warning mb-1" href="{{ path('home') }}">Retour Site</a>
+                <a class="text-white btn btn-warning mb-1" href="{{ path('home') }}">Retour au site</a>
               {% endif %}
               <a href="{{ path('app_logout') }}" class="btn btn-danger mb-1 text-white">
                 <i class="fas fa-sign-out-alt"></i>

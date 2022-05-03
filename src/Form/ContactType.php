@@ -43,7 +43,7 @@ class ContactType extends AbstractType
                 // ],
             ])
             ->add('subject', TextType::class, [
-                'label' => 'Objet',
+                'label' => 'Objet du message',
                 // 'attr' => [
                 //     'placeholder' => 'Objet du message',
                 // ],

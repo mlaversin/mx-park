@@ -35,19 +35,19 @@ class EventType extends AbstractType
             ->add('startMemberSubs', IntegerType::class, [
                 'label' => 'Inscription Membres',
                 'attr' => [
-                    'placeholder' => 'Nombre de jours entre ouverture des inscriptions et entrainement',
+                    'placeholder' => 'Nombre de jours entre l\'ouverture des inscriptions et l\'entraînement',
                 ],
             ])
             ->add('startAllSubs', IntegerType::class, [
                 'label' => 'Inscription (autres)',
                 'attr' => [
-                    'placeholder' => 'Nombre de jours entre ouverture des inscriptions et entrainement',
+                    'placeholder' => 'Nombre de jours entre l\'ouverture des inscriptions et l\'entraînement',
                 ],
             ])
             ->add('endSubs', IntegerType::class, [
                 'label' => 'Fermeture Inscriptions',
                 'attr' => [
-                    'placeholder' => 'Nombre de jours entre fermeture des inscriptions et entrainement',
+                    'placeholder' => 'Nombre de jours entre la fermeture des inscriptions et l\'entraînement',
                 ],
             ])
             ->add('googleCalendarUrl', TextType::class, [

@@ -14,25 +14,25 @@ class AnimationType extends AbstractType
     {
         $builder
             ->add('carouselMessage1', TextType::class, [
-                'label' => 'Message n°1',
+                'label' => 'Message 1',
                 'attr' => [
                     'placeholder' => 'Entrez ici le texte qui s\'affichera dans le carroussel',
                 ],
             ])
             ->add('carouselMessage2', TextType::class, [
-                'label' => 'Message n°2',
+                'label' => 'Message 2',
                 'attr' => [
                     'placeholder' => 'Entrez ici le texte qui s\'affichera dans le carroussel',
                 ],
             ])
             ->add('carouselMessage3', TextType::class, [
-                'label' => 'Message n°3',
+                'label' => 'Message 3',
                 'attr' => [
                     'placeholder' => 'Entrez ici le texte qui s\'affichera dans le carroussel',
                 ],
             ])
             ->add('carouselMessage4', TextType::class, [
-                'label' => 'Message n°4',
+                'label' => 'Message 4',
                 'attr' => [
                     'placeholder' => 'Entrez ici le texte qui s\'affichera dans le carroussel',
                 ],
