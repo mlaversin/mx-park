@@ -16,49 +16,20 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('firstName', TextType::class, [
-                'label' => 'Prénom',
-                // 'attr' => [
-                //     'placeholder' => 'Votre prénom',
-                // ],
-                // 'attr' => [
-                //     'oninvalid' => "setCustomValidity('Par quel doux prénom vous faites vous appeler ?')"
-                // ],
+                'label' => 'Prénom'
             ])
             ->add('lastName', TextType::class, [
-                'label' => 'Nom',
-                // 'attr' => [
-                //     'placeholder' => 'Votre nom de famille',
-                // ],
-                // 'attr' => [
-                //     'oninvalid' => "setCustomValidity('Quel est votre petit nom ?')"
-                // ],
+                'label' => 'Nom'
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Email',
-                // 'attr' => [
-                //     'placeholder' => 'Votre adresse email',
-                // ],
-                // 'attr' => [
-                //     'oninvalid' => "setCustomValidity('J'ai besoin de votre adresse email !')"
-                // ],
+                'label' => 'Adresse email'
             ])
             ->add('subject', TextType::class, [
-                'label' => 'Objet du message',
-                // 'attr' => [
-                //     'placeholder' => 'Objet du message',
-                // ],
-                // 'attr' => [
-                //     'oninvalid' => "setCustomValidity('Pourquoi souhaitez-vous nous contacter ?')"
-                // ],
+                'label' => 'Objet'
             ])
             ->add('message', TextareaType::class, [
                 'label' => 'Message',
-                // 'attr' => [
-                //     'placeholder' => 'Votre message',
-                // ],
-                // 'attr' => [
-                //     'oninvalid' => "setCustomValidity('La concision est une qualité, mais là il y a de l'abus.')"
-                // ],
+                'attr' => array('style' => 'height: 150px; resize: none;')
             ])
         ;
     }

@@ -48,51 +48,51 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <!-- Version moyens-grands écrans -->
-            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/motocross-dimanche_960x200.jpg"))}}" alt="Moto Dimanche">
+            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/carousel-2.jpg"))}}" alt="Moto Dimanche">
             <div class="carousel-caption">
-              <h1>
+              <h3>
                 {% if animation.carouselMessage1 is defined %}
                   {{ animation.carouselMessage1 }}
                 {% else %}
                   Entraînement tous les premiers dimanches du mois !
                 {% endif %}
-              </h1>
+              </h3>
             </div>
           </div>
           <div class="carousel-item">
             <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/terrain1_960x200.jpg"))}}" alt="Terrain 1">
             <div class="carousel-caption">
-              <h1>
+              <h3>
                 {% if animation.carouselMessage2 is defined %}
                   {{ animation.carouselMessage2 }}
                 {% else %}
                   Entraînement tous les premiers dimanches du mois !
                 {% endif %}
-              </h1>
+              </h3>
             </div>
           </div>
           <div class="carousel-item">
             <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/motocross-team_960x200.jpg"))}}" alt="Team">
             <div class="carousel-caption">
-              <h1>
+              <h3>
                 {% if animation.carouselMessage3 is defined %}
                   {{ animation.carouselMessage3 }}
                 {% else %}
                   Entraînement tous les premiers dimanches du mois !
                 {% endif %}
-              </h1>
+              </h3>
             </div>
           </div>
           <div class="carousel-item">
             <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/terrain2_960x200.jpg"))}}" alt="Terrain 2">
             <div class="carousel-caption">
-              <h1>
+              <h3>
                 {% if animation.carouselMessage4 is defined %}
                   {{ animation.carouselMessage4 }}
                 {% else %}
                   Entraînement tous les premiers dimanches du mois !
                 {% endif %}
-              </h1>
+              </h3>
             </div>
           </div>
         </div>
@@ -153,7 +153,7 @@
       <div class="flex-card pageMobileCard">
         <h1 class="flex-title">Les lieux</h1>
         <div class="flex-element">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.802138413488!2d-1.641914684472197!3d48.133338979223076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDA4JzAwLjAiTiAxwrAzOCcyMy4wIlc!5e0!3m2!1sfr!2sfr!4v1622392853947!5m2!1sfr!2sfr" width="270" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63175.51148107438!2d1.340136726550057!3d43.343532766662754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aecfc42536a145%3A0xdde4829e36d4eed4!2sAuribail%20mx%20track!5e0!3m2!1sfr!2sfr!4v1651586425971!5m2!1sfr!2sfr" width="270" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="flex-footer">
           <a class="btn btn-primary" href="#club">Voir plus !</a>
@@ -173,7 +173,7 @@
       <div class="pageMobile text-center flex-divider mr-5">
         <h1>Auribail MX Park</h1>
         <div class="flex-element">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.802138413488!2d-1.641914684472197!3d48.133338979223076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDA4JzAwLjAiTiAxwrAzOCcyMy4wIlc!5e0!3m2!1sfr!2sfr!4v1622392853947!5m2!1sfr!2sfr" width="270" height="250" class="border border-dark" allowfullscreen="" loading="lazy"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63175.51148107438!2d1.340136726550057!3d43.343532766662754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aecfc42536a145%3A0xdde4829e36d4eed4!2sAuribail%20mx%20track!5e0!3m2!1sfr!2sfr!4v1651586425971!5m2!1sfr!2sfr" width="270" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
       <div class="pl-5 pt-2 flex-divider">
@@ -246,7 +246,7 @@
           </div>
         </div>
         <div class="col-lg-3 pageMobile flex-divider d-flex align-content-center">
-          <div class="flex-card flex-gauge">
+          <div class="flex-card flex-gauge my-5 py-3">
             {% set percent = min(event.nbusers, 75) / 75 * 100 %}
             <div class="progress">
               <div class="progress-bar bg-warning" role="progressbar" style="width: {{ percent }}%" aria-valuenow="{{ event.nbusers }}" aria-valuemin="0" aria-valuemax="75"></div>
@@ -262,7 +262,7 @@
               </p>
             {% endif %}
           </div>
-          <div class="flex-card flex-gauge pb-3">
+          <div class="flex-card flex-gauge py-3">
             {% set percentKids = min(kids.nbusers, 15) / 15 * 100 %}
             <div class="progress">
               <div class="progress-bar bg-warning" role="progressbar" style="width: {{ percentKids }}%" aria-valuenow="{{ kids.nbusers }}" aria-valuemin="0" aria-valuemax="15"></div>
@@ -289,7 +289,7 @@
 	<div class="container">
       <h1 class="text-center my-3">Contactez-nous</h1>
       <div class="row">
-        <div class="col-md-9 mb-md-0 mb-5" id="contactForm">
+        <div class="col-md-6 offset-md-2 mb-md-0 mb-5" id="contactForm">
           {{ form_start(formContact) }}
           <div class="row pageMobile">
             <div class="col-md-6 mb-2">
@@ -333,16 +333,16 @@
           </div>
           {{ form_rest(formContact) }}
           <div class="text-center text-md-left form-group">
-            <button class="btn btn-primary">Envoyer</button>
+            <button class="btn btn-primary w-100 mt-2">Envoyer</button>
           </div>
           <div class="status"></div>
           {{ form_end(formContact) }}
         </div>
         <div class="col-md-3 text-center pageMobile">
-          <ul class="list-unstyled mb-0">
+          <ul class="list-unstyled mt-5 mb-0">
             <li>
-              <i class="fas fa-map-marker-alt fa-2x"></i>
-              <p>Rossignol</p>
+              <i class="fas fa-map-marker-alt fa-2x mt-4"></i>
+              <p>Peyret</p>
               <p>31190 AURIBAIL</p>
             </li>
             <li>
@@ -361,7 +361,7 @@
   </section>
   <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
   <!-- Eeeet le footer ! -->
-  <footer class="page-footer my-footer my-nav-color text-dark py-5 w-100" id="myFooter">
+  <footer class="page-footer my-footer bg-dark text-light py-5 w-100" id="myFooter">
     <div class="container text-center">
       <div class="footer-copyright">
         Copyright © Motocross Auribail 2021</div>
