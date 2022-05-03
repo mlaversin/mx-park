@@ -1,13 +1,13 @@
 {% extends 'admin-base.html.twig' %}
 
-{% block title %}MX Park | Admin | Détail entrainement{% endblock %}
+{% block title %}MX Park | Admin | Détail entraînement{% endblock %}
 
 {% block body %}
   {# <div class="container"> #}
     <div class="row">
       <div class="col-12 col-lg-10 mx-auto">
         <div class="d-flex  my-4">
-          <h1 class="h2">Détail entrainement du
+          <h1 class="h2">Détail entraînement du
             {{ event.date ? event.date|date('d/m/Y') : '' }}
           </h1>
           <p class="ml-auto">
@@ -81,7 +81,7 @@
             <th>Nom</th>
             <th>Prénom</th>
             <th class="d-none d-lg-block">Date Inscription</th>
-            <th>Inscription Validée ?</th>
+            <th>Inscription validée ?</th>
           </thead>
           <tbody>
             {% if event.type == false %}

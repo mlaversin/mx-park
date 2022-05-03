@@ -1,8 +1,8 @@
-<form method="post" action="{{ path('event_delete', {'id': event.id}) }}" onsubmit="return confirm('Etes-vous sûr(e) de vouloir supprimer cet entrainement ?');">
+<form method="post" action="{{ path('event_delete', {'id': event.id}) }}" onsubmit="return confirm('Etes-vous sûr(e) de vouloir supprimer cet entraînement ?');">
   <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">
   <div class="row">
     <div class="ml-auto">
-      <button class="btn btn-danger my-3 mr-3">Supprimer l'entrainement 
+      <button class="btn btn-danger my-3 mr-3">Supprimer l'entraînement 
         <i class="fas fa-trash-alt"></i>
       </button>
     </div>
