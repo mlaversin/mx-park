@@ -35,7 +35,7 @@
   
   
   <!-- PAGE D'ACCUEIL -->
-  <section class="flex-section page" id="accueil">
+  <section class="page" id="homepage">
     <!-- Le carousel de posters :) -->
     <div class="flex-carousel mt-4">
       <div class="carousel slide" id="my-carousel">
@@ -48,9 +48,9 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <!-- Version moyens-grands écrans -->
-            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/carousel-2.jpg"))}}" alt="Moto Dimanche">
+            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/carousel-1.jpg"))}}" alt="">
             <div class="carousel-caption">
-              <h3>
+              <h3 class="mb-5">
                 {% if animation.carouselMessage1 is defined %}
                   {{ animation.carouselMessage1 }}
                 {% else %}
@@ -60,9 +60,9 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/terrain1_960x200.jpg"))}}" alt="Terrain 1">
+            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/carousel-2.jpg"))}}" alt="">
             <div class="carousel-caption">
-              <h3>
+              <h3 class="mb-5">
                 {% if animation.carouselMessage2 is defined %}
                   {{ animation.carouselMessage2 }}
                 {% else %}
@@ -72,9 +72,9 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/motocross-team_960x200.jpg"))}}" alt="Team">
+            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/carousel-3.jpg"))}}" alt="">
             <div class="carousel-caption">
-              <h3>
+              <h3 class="mb-5">
                 {% if animation.carouselMessage3 is defined %}
                   {{ animation.carouselMessage3 }}
                 {% else %}
@@ -84,9 +84,9 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/terrain2_960x200.jpg"))}}" alt="Terrain 2">
+            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/caroulse-4.jpg"))}}" alt="">
             <div class="carousel-caption">
-              <h3>
+              <h3 class="mb-5">
                 {% if animation.carouselMessage4 is defined %}
                   {{ animation.carouselMessage4 }}
                 {% else %}
@@ -106,6 +106,13 @@
         </a>
       </div>
     </div>
+
+    <h1 class="pageMobile text-center my-5">Bienvenue au MX Park d'Auribail</h1>
+    <h3 class="text-center my-3"></h3>
+  </section>
+
+  <section class="flex-section page" id="accueil">
+
     {# NOTA BENE on considère qu'il existe toujours de prochains événements #}
     <div class="flex-container pageMobile">
       <div class="flex-card pageMobileCard">
@@ -168,7 +175,7 @@
   </section>
   <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
   <!-- PAGE CLUB -->
-  <section class="container-fluid page flex-section super-light-bg" id="club">
+  <section class="container-fluid flex-section page super-light-bg" id="club">
     <div class="flex-container">
       <div class="pageMobile text-center flex-divider mr-5">
         <h1>Auribail MX Park</h1>
@@ -285,83 +292,83 @@
   <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
   <!-- PAGE CONTACT -->
   <section class="container-fluid page flex-section genius-light-bg pt-5" id="contact">
-  <div class="mx-px-0">
-	<div class="container">
-      <h1 class="text-center my-3">Contactez-nous</h1>
-      <div class="row">
-        <div class="col-md-6 offset-md-2 mb-md-0 mb-5" id="contactForm">
-          {{ form_start(formContact) }}
-          <div class="row pageMobile">
-            <div class="col-md-6 mb-2">
-              {{ form_label(formContact.firstName) }}
-              {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                {{ form_widget(formContact.firstName, {'value' : app.user.firstName}) }}
-              {% else %}
-                {{ form_widget(formContact.firstName) }}
-              {% endif %}
+    <div class="mx-px-0">
+    <div class="container">
+        <h1 class="text-center my-3">Contactez-nous</h1>
+        <div class="row">
+          <div class="col-md-6 offset-md-2 mb-md-0 mb-5" id="contactForm">
+            {{ form_start(formContact) }}
+            <div class="row pageMobile">
+              <div class="col-md-6 mb-2">
+                {{ form_label(formContact.firstName) }}
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                  {{ form_widget(formContact.firstName, {'value' : app.user.firstName}) }}
+                {% else %}
+                  {{ form_widget(formContact.firstName) }}
+                {% endif %}
+              </div>
+              <div class="col-md-6 mb-2">
+                {{ form_label(formContact.lastName) }}
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                  {{ form_widget(formContact.lastName, {'value' : app.user.lastName}) }}
+                {% else %}
+                  {{ form_widget(formContact.lastName) }}
+                {% endif %}
+              </div>
             </div>
-            <div class="col-md-6 mb-2">
-              {{ form_label(formContact.lastName) }}
-              {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                {{ form_widget(formContact.lastName, {'value' : app.user.lastName}) }}
-              {% else %}
-                {{ form_widget(formContact.lastName) }}
-              {% endif %}
+            <div class="row pageMobile">
+              <div class="col-md-12 mb-2">
+                {{ form_label(formContact.email) }}
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                  {{ form_widget(formContact.email, {'value' : app.user.email}) }}
+                {% else %}
+                  {{ form_widget(formContact.email) }}
+                {% endif %}
+              </div>
             </div>
-          </div>
-          <div class="row pageMobile">
-            <div class="col-md-12 mb-2">
-              {{ form_label(formContact.email) }}
-              {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                {{ form_widget(formContact.email, {'value' : app.user.email}) }}
-              {% else %}
-                {{ form_widget(formContact.email) }}
-              {% endif %}
+            <div class="row">
+              <div class="col-md-12 mb-2">
+                {{ form_label(formContact.subject) }}
+                {{ form_widget(formContact.subject) }}
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 mb-2">
-              {{ form_label(formContact.subject) }}
-              {{ form_widget(formContact.subject) }}
+            <div class="row pageMobile">
+              <div class="col-md-12 mb-2">
+                {{ form_label(formContact.message) }}
+                {{ form_widget(formContact.message) }}
+              </div>
             </div>
-          </div>
-          <div class="row pageMobile">
-            <div class="col-md-12 mb-2">
-              {{ form_label(formContact.message) }}
-              {{ form_widget(formContact.message) }}
+            {{ form_rest(formContact) }}
+            <div class="text-center text-md-left form-group">
+              <button class="btn btn-primary w-100 mt-2">Envoyer</button>
             </div>
+            <div class="status"></div>
+            {{ form_end(formContact) }}
           </div>
-          {{ form_rest(formContact) }}
-          <div class="text-center text-md-left form-group">
-            <button class="btn btn-primary w-100 mt-2">Envoyer</button>
+          <div class="col-md-3 text-center pageMobile">
+            <ul class="list-unstyled mt-5 mb-0">
+              <li>
+                <i class="fas fa-map-marker-alt fa-2x mt-4"></i>
+                <p>Peyret</p>
+                <p>31190 AURIBAIL</p>
+              </li>
+              <li>
+                <i class="fas fa-phone mt-4 fa-2x"></i>
+                <p>+33 6 88 93 48 15</p>
+              </li>
+              <li>
+                <i class="fas fa-envelope mt-4 fa-2x"></i>
+                <p>contact@mxpark.com</p>
+              </li>
+            </ul>
           </div>
-          <div class="status"></div>
-          {{ form_end(formContact) }}
-        </div>
-        <div class="col-md-3 text-center pageMobile">
-          <ul class="list-unstyled mt-5 mb-0">
-            <li>
-              <i class="fas fa-map-marker-alt fa-2x mt-4"></i>
-              <p>Peyret</p>
-              <p>31190 AURIBAIL</p>
-            </li>
-            <li>
-              <i class="fas fa-phone mt-4 fa-2x"></i>
-              <p>+33 6 88 93 48 15</p>
-            </li>
-            <li>
-              <i class="fas fa-envelope mt-4 fa-2x"></i>
-              <p>contact@mxpark.com</p>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
-  </div>
   </section>
   <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
   <!-- Eeeet le footer ! -->
-  <footer class="page-footer my-footer bg-dark text-light py-5 w-100" id="myFooter">
+  <footer class="page-footer my-footer bg-dark text-light py-3 w-100" id="myFooter">
     <div class="container text-center">
       <div class="footer-copyright">
         Copyright © Motocross Auribail 2021</div>
