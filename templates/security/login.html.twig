@@ -23,11 +23,11 @@
 
           <div class="row">
             <div class="col-10">
-              <h1>Connexion</h1>
+              <h1 class="mt-5">Connexion</h1>
             </div>
-            <div class="col-2 mt-3 text-right">
+            <div class="col-2 mt-5 text-right">
               <p class="ml-auto">
-              <a class="btn btn-primary" href="{{ path('home') }}">
+              <a class="btn btn-warning text-white" href="{{ path('home') }}">
               <i class="fas fa-arrow-circle-left"></i>
               </a>
               </p>
@@ -43,12 +43,12 @@
           <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
           <div class="mt-4 mb-5">
-          <button class="btn btn-primary " type="submit">Connexion</button>
+          <button class="btn btn-warning " type="submit">Connexion</button>
           </div>
 
-          <div class="my-5 text-center">
-          <a href="{{ path ('app_register') }}">Vous n'avez pas encore de compte ? Enregistrez-vous !</a>
-          </div>
+          {# <div class="my-5 text-center">
+          <a href="{{ path ('app_register') }}" class="text-dark">Vous n'avez pas encore de compte ? Enregistrez-vous !</a>
+          </div> #}
 
     </div>
   </div>

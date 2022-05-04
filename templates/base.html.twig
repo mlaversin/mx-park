@@ -21,25 +21,21 @@
 
     {% block stylesheets %}{% endblock %}
     {% block javascripts %}{% endblock %}
-    <!-- bootstrap (need to be after javascript for index twig to work): -->
+    <!-- CDN Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-    <!-- LEXEND font is made to be easily read -->
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap" rel="stylesheet">
-
-    <!-- Font awesome for logos -->
+    <!-- CDN Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"/>
   </head>
 
-  <!-- data-offset="50" -->
   <body>
     <div data-spy="scroll" data-target=".navbar" data-offset="150" class="scroll-container mx-px-0" id="scrollContainer">
 
       <!-- *********** NAVBAR *********** -->
-
       <nav class="navbar navbar-expand-md fixed-top navbar navbar-dark bg-dark my-0 py-0 shadow-sm">   
-        <a class="navbar-brand" href="#homepage">
+        <a class="navbar-brand" href="{{ path('home') }}">
           <img class="img-fluid my-logo mr-3" src="{{ absolute_url(asset("/build/motocross-logo.png")) }}" alt="Logo motocross">
           Auribail MX Park
         </a>
@@ -71,7 +67,7 @@
         </div>
       </nav>
 
-
+      <!-- *********** ALERTS *********** -->
       {# Alert for a successful action #}
       {% for message in app.flashes('success') %}
         <div class="flash-success alert alert-success alert-dismissible fade show mt-4" role="alert">

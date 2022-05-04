@@ -26,7 +26,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/", name="home", defaults={"_fragment"="accueil"}, requirements={"_fragment": "accueil|club|evenement|contact"})
+     * @Route("/", name="home", defaults={"_fragment"="homepage"}, requirements={"_fragment": "homepage|club|infos|evenement|contact"})
      */
     public function index(Request $request, ContactNotification $notification, SubscriptionRepository $subsRepo, EventRepository $eventRepo, AnimationRepository $animationRepo): Response
     {
