@@ -11,7 +11,7 @@
     <meta property="og:url" content="http://www.auribail-mx-park.local"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Auribail MX Park"/>
-    <meta property="og:description" content="Inscrivez-vous et réservez votre place pour une session d'entrainement de foooooolie"/>
+    <meta property="og:description" content="Inscrivez-vous et réservez votre place pour une session d'entraînement de folie"/>
     <meta property="og:image" content="http://www.auribail-mx-park.local/build/motocross-logo.png"/>
 
 
@@ -35,11 +35,10 @@
   <!-- data-offset="50" -->
   <body>
     <div data-spy="scroll" data-target=".navbar" data-offset="150" class="scroll-container mx-px-0" id="scrollContainer">
-      <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-      <!-- NAVBAR -->
 
-      <nav class="navbar navbar-expand-md fixed-top navbar navbar-dark bg-dark my-0 py-0 shadow-sm">
-        {# <div class="container"> #}
+      <!-- *********** NAVBAR *********** -->
+
+      <nav class="navbar navbar-expand-md fixed-top navbar navbar-dark bg-dark my-0 py-0 shadow-sm">   
         <a class="navbar-brand" href="#homepage">
           <img class="img-fluid my-logo mr-3" src="{{ absolute_url(asset("/build/motocross-logo.png")) }}" alt="Logo motocross">
           Auribail MX Park
@@ -55,7 +54,7 @@
                 {% if is_granted('ROLE_ADMIN') %}
                   <a class="text-white btn btn-warning mb-1" href="{{ path('admin') }}">Espace Admin</a>
                 {% endif %}
-                <a href="{{ path('profil_show', {id: app.user.id}) }}" class="btn btn-primary mb-1 text-white">
+                <a href="{{ path('profil_show', {id: app.user.id}) }}" class="btn btn-dark mb-1 text-white">
                   <i class="far fa-user"></i>
                   Mon compte</a>
                 <a href="{{ path('app_logout') }}" class="btn btn-danger mb-1 text-white">
@@ -63,14 +62,13 @@
                 </a>
               {% else %}
 
-                <button class="btn btn-primary mb-1" data-toggle="modal" data-target="#authModal">Se connecter</button>
-                <a href="{{ path('app_register') }}" class="text-white btn btn-success mb-1">Créer un compte</a>
+                <a href="{{ path('app_register') }}" class="text-white btn btn-dark mb-1">Créer un compte</a>
+                <button class="btn btn-warning mb-1" data-toggle="modal" data-target="#authModal">Se connecter</button>
 
               {% endif %}
             </li>
           </ul>
         </div>
-        {# </div> #}
       </nav>
 
 

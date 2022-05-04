@@ -223,3 +223,10 @@ footer {
 .extra {
   scroll-snap-align: start;
 }
+
+.btn-dark {
+  border-color: #999 !important;
+}
+.btn-dark:hover {
+  border-color: #222 !important;
+}
