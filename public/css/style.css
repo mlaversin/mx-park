@@ -177,11 +177,21 @@ section {
   }
 }
 /* Responsive carousel */
-@media only screen and (min-width: 1200px) and (max-height: 695px),
-  only screen and (max-width: 1199px) and (max-height: 650px),
-  only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .flex-carousel {
     display: none !important;
+  }
+  .bg-sm-screen {
+    height: 500px;
+    width: 100%;
+    background-image: url(../build/bg-sm-screen.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+}
+@media only screen and (max-width: 470px) {
+  .bg-sm-screen {
+    height: 450px;
   }
 }
 
