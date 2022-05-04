@@ -2,18 +2,21 @@
 html {
   /* Scroll style: */
   overflow: hidden;
-  /* padding-top: 15vh; */
 }
 body {
   font-family: "Lexend", sans-serif;
   background-color: #eaeae3;
   overflow: hidden;
 }
+
+section {
+  height: 95vh;
+}
+
 .scroll-container {
   width: 100%;
   /* This line is essential, unless you want all the scroll functions to shut down: */
   height: 100vh;
-  /* height: 680px; */
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-y: scroll;
@@ -67,23 +70,27 @@ body {
 .my-footer {
   font-size: 0.8rem;
 }
+.homepage-illustration {
+  height: 400px;
+}
 /* My images must be darkened so that the captions can be read */
 .my-img {
   filter: brightness(50%);
 }
 .super-light-bg {
-  background-image: url("/build/wallpaper-motocross.png");
+  background-image: url("/build/background-3.webp");
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
-  background-position: top;
+  background-position: bottom right;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .genius-light-bg {
-  background-image: url("/build/motocross-sky.png");
+  background-image: url("/build/background-2.webp");
+  background-size: cover;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
-  background-position: top;
+  background-position: 20% 50%;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -151,8 +158,6 @@ body {
   padding: 10px;
   padding-bottom: 0px;
 }
-
-
 
 /* ****************************************** Responsiveness ! ************************************* */
 /* Here is some responsiveness for the indicative arrow */
