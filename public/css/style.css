@@ -10,7 +10,7 @@ body {
 }
 
 section {
-  height: 95vh;
+  height: 100vh;
 }
 
 .scroll-container {
@@ -111,7 +111,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 5vh;
+  /* margin-top: 5vh; */
   /* this line + the equivalent in media-query page will seriously mess with the responsiveness
     (sections overlapping because of relative measure vh): */
   /* height: 95vh; */
