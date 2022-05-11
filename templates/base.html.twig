@@ -3,116 +3,107 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-      {% block title %}MX park{% endblock %}
-    </title>
+    <title>{% block title %}MX park{% endblock %}</title>
 
 	  {# description of the website for facebook sharer #}
     <meta property="og:url" content="http://www.auribail-mx-park.local"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Auribail MX Park"/>
     <meta property="og:description" content="Inscrivez-vous et réservez votre place pour une session d'entraînement de folie"/>
-    <meta property="og:image" content="http://www.auribail-mx-park.local/build/motocross-logo.png"/>
+    <meta property="og:image" content="http://www.auribail-mx-park.local/img/motocross-logo.png"/>
 
-
-    <link rel="icon" href="/build/motocross-fav.png" type="image/png" sizes="32x32">
-
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="icon" href="/img/motocross-fav.png" type="image/png" sizes="32x32">
 
     {% block stylesheets %}{% endblock %}
-    {% block javascripts %}{% endblock %}
     <!-- CDN Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- CDN Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    {% block javascripts %}{% endblock %}
   </head>
 
   <body>
-    <div data-spy="scroll" data-target=".navbar" data-offset="150" class="scroll-container mx-px-0" id="scrollContainer">
-
-      <!-- *********** NAVBAR *********** -->
-      <nav class="navbar navbar-expand-lg fixed-top navbar navbar-dark bg-dark my-0 py-0 shadow-sm">   
-        <a class="navbar-brand" href="{{ path('home') }}">
-          <img class="img-fluid my-logo mr-3" src="{{ absolute_url(asset("/build/motocross-logo.png")) }}" alt="Logo motocross">
-          Auribail MX Park
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            {% block navbarButtons %}{% endblock %}
-            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-              {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                {% if is_granted('ROLE_ADMIN') %}
-                  <a class="text-white btn btn-warning mb-1" href="{{ path('admin') }}">Espace Admin</a>
-                {% endif %}
-                <a href="{{ path('profil_show', {id: app.user.id}) }}" class="btn btn-dark mb-1 text-white">
-                  <i class="far fa-user"></i>
-                  Mon compte</a>
-                <a href="{{ path('app_logout') }}" class="btn btn-danger mb-1 text-white">
-                  <i class="fas fa-sign-out-alt"></i>
+    <!-- *********** NAVBAR *********** -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar navbar-dark bg-dark my-0 py-0 shadow-sm">   
+      <a class="navbar-brand" href="{{ path('home') }}">
+        <img class="img-fluid nav-logo mr-3" src="{{ absolute_url(asset("/img/motocross-logo.png")) }}" alt="Accueil du site">
+        Auribail MX Park
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          {% block navbarButtons %}{% endblock %}
+          <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+              {% if is_granted('ROLE_ADMIN') %}
+                <a class="text-white btn btn-warning mb-1" href="{{ path('admin') }}">
+                  Espace Admin
                 </a>
-              {% else %}
-
-                <a href="{{ path('app_register') }}" class="text-white btn btn-dark mb-1">Créer un compte</a>
-                <button class="btn btn-warning mb-1" data-toggle="modal" data-target="#authModal">Se connecter</button>
-
               {% endif %}
-            </li>
-          </ul>
-        </div>
-      </nav>
+              <a href="{{ path('profil_show', {id: app.user.id}) }}" class="btn btn-dark mb-1 text-white">
+                <i class="far fa-user"></i>
+                Mon compte
+              </a>
+              <a href="{{ path('app_logout') }}" class="btn btn-danger mb-1 text-white" aria-label="Se déconnecter">
+                <i class="fas fa-sign-out-alt"></i>
+              </a>
+            {% else %}
 
-      <!-- *********** ALERTS *********** -->
-      {# Alert for a successful action #}
-      {% for message in app.flashes('success') %}
-        <div class="flash-success alert alert-success alert-dismissible fade show mt-4" role="alert">
-          {{ message }}
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      {% endfor %}
-      {# Alert for the cancelling of an event or such things #}
-      {% for message in app.flashes('issueEvent') %}
-        <div class="flash-issueEvent alert alert-primary alert-dismissible fade show mt-4" role="alert">
-          {{ message }}
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      {% endfor %}
-      {# Alert for an account deletion or other worrying thing #}
-      {% for message in app.flashes('warning')%}
-		    <div class="flash-success alert alert-danger alert-dismissible fade show mt-4">
-			    {{ message }}
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-		    </div>
-	    {% endfor %}
+              <a href="{{ path('app_register') }}" class="text-white btn btn-dark mb-1">Créer un compte</a>
+              <button class="btn btn-warning mb-1" data-toggle="modal" data-target="#authModal">Se connecter</button>
+
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- *********** ALERTS *********** -->
+    {# Alert for a successful action #}
+    {% for message in app.flashes('success') %}
+      <div class="flash-success alert alert-success alert-dismissible fade show mt-4" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endfor %}
+    {# Alert for the cancelling of an event or such things #}
+    {% for message in app.flashes('issueEvent') %}
+      <div class="flash-issueEvent alert alert-primary alert-dismissible fade show mt-4" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endfor %}
+    {# Alert for an account deletion or other worrying thing #}
+    {% for message in app.flashes('warning')%}
+      <div class="flash-success alert alert-danger alert-dismissible fade show mt-4">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endfor %}
 
 
+    {% block body %}{% endblock %}
 
-
-      {% block body %}{% endblock %}
-    </div>
     {% block modals %}{% endblock %}
 
 
-
-  
- 
-
-
-    <!-- some links for animations like burger menu -->
-    <!-- bootstrap : -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!-- Script Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     {% block bottomScript %}{% endblock %}
   </body>
 </html>

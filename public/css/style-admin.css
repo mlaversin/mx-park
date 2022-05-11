@@ -3,23 +3,6 @@ body {
   background-color: #eaeae3;
 }
 
-/* .my-nav-color {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #2196f3, #2196f3);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-} */
-
-/* @keyframes gradient {
-  0% {
-      background-position: 0% 30%;
-  }
-  50% {
-      background-position: 100% 30%;
-  }
-  100% {
-      background-position: 0% 30%;
-  }
-} */
 .my-footer {
   font-size: 0.8rem;
 }
@@ -52,23 +35,4 @@ body {
 #map {
   height: 270px;
   width: 100%;
-}
-
-/* Style du scroll : */
-@media only screen and (min-width: 768px) {
-  .page {
-    scroll-snap-align: start;
-    height: 100vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .pageMobile {
-    scroll-snap-align: start;
-    height: 98vh;
-    padding-top: 15vh;
-  }
-}
-
-footer {
-  scroll-snap-align: end;
 }

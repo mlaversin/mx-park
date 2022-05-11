@@ -32,94 +32,98 @@
 {% block body %}
   
   <!-- ******** HOMEPAGE ******** -->
-  <section class="page" id="homepage">
-    <div class="flex-carousel mt-4">
-      <div class="carousel slide" id="my-carousel">
-        <ul class="carousel-indicators">
-          <li data-slide-to="0" data-target="#my-carousel" class="active"></li>
-          <li data-slide-to="1" data-target="#my-carousel"></li>
-          <li data-slide-to="2" data-target="#my-carousel"></li>
-          <li data-slide-to="3" data-target="#my-carousel"></li>
-        </ul>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <!-- Version moyens-grands écrans -->
-            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/carousel-1.jpg"))}}" alt="">
-            <div class="carousel-caption">
-              <h3 class="mb-5">
-                {% if animation.carouselMessage1 is defined %}
-                  {{ animation.carouselMessage1 }}
-                {% else %}
-                  Entraînement tous les premiers dimanches du mois !
-                {% endif %}
-              </h3>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/carousel-2.jpg"))}}" alt="">
-            <div class="carousel-caption">
-              <h3 class="mb-5">
-                {% if animation.carouselMessage2 is defined %}
-                  {{ animation.carouselMessage2 }}
-                {% else %}
-                  Entraînement tous les premiers dimanches du mois !
-                {% endif %}
-              </h3>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/carousel-3.jpg"))}}" alt="">
-            <div class="carousel-caption">
-              <h3 class="mb-5">
-                {% if animation.carouselMessage3 is defined %}
-                  {{ animation.carouselMessage3 }}
-                {% else %}
-                  Entraînement tous les premiers dimanches du mois !
-                {% endif %}
-              </h3>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="img-fluid w-100 my-img" src="{{absolute_url(asset("/build/carousel-4.jpg"))}}" alt="">
-            <div class="carousel-caption">
-              <h3 class="mb-5">
-                {% if animation.carouselMessage4 is defined %}
-                  {{ animation.carouselMessage4 }}
-                {% else %}
-                  Entraînement tous les premiers dimanches du mois !
-                {% endif %}
-              </h3>
-            </div>
+  <section id="homepage" class="homepage">
+
+    <!-- Carousel -->
+    <div class="carousel slide" id="home-carousel">
+      <ul class="carousel-indicators">
+        <li data-slide-to="0" data-target="#home-carousel" class="active"></li>
+        <li data-slide-to="1" data-target="#home-carousel"></li>
+        <li data-slide-to="2" data-target="#home-carousel"></li>
+        <li data-slide-to="3" data-target="#home-carousel"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!-- Version moyens-grands écrans -->
+          <img class="img-fluid w-100 carousel-img" src="{{absolute_url(asset("/img/carousel-1.jpg"))}}" alt="">
+          <div class="carousel-caption">
+            <h3 class="mb-5">
+              {% if animation.carouselMessage1 is defined %}
+                {{ animation.carouselMessage1 }}
+              {% else %}
+                Entraînement tous les premiers dimanches du mois !
+              {% endif %}
+            </h3>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#my-carousel" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#my-carousel" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <div class="carousel-item">
+          <img class="img-fluid w-100 carousel-img" src="{{absolute_url(asset("/img/carousel-2.jpg"))}}" alt="">
+          <div class="carousel-caption">
+            <h3 class="mb-5">
+              {% if animation.carouselMessage2 is defined %}
+                {{ animation.carouselMessage2 }}
+              {% else %}
+                Entraînement tous les premiers dimanches du mois !
+              {% endif %}
+            </h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="img-fluid w-100 carousel-img" src="{{absolute_url(asset("/img/carousel-3.jpg"))}}" alt="">
+          <div class="carousel-caption">
+            <h3 class="mb-5">
+              {% if animation.carouselMessage3 is defined %}
+                {{ animation.carouselMessage3 }}
+              {% else %}
+                Entraînement tous les premiers dimanches du mois !
+              {% endif %}
+            </h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="img-fluid w-100 carousel-img" src="{{absolute_url(asset("/img/carousel-4.jpg"))}}" alt="">
+          <div class="carousel-caption">
+            <h3 class="mb-5">
+              {% if animation.carouselMessage4 is defined %}
+                {{ animation.carouselMessage4 }}
+              {% else %}
+                Entraînement tous les premiers dimanches du mois !
+              {% endif %}
+            </h3>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#home-carousel" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#home-carousel" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <div class="container d-flex align-items-center">
+      <div>
+        <h1 class="text-center mb-4">Bienvenue au MX Park d'Auribail</h1>
+        <p class="h6 text-center mb-3">Situé à 30 minutes de Toulouse, le circuit MX Park Auribail vous accueille tous les premiers dimanches du mois pour des entraînements de motocross !</p>
       </div>
     </div>
-    
-    <h1 class="pageMobile text-center mt-5 mb-4">Bienvenue au MX Park d'Auribail</h1>
-    <h6 class="text-center mb-3">Situé à 30 minutes de Toulouse, le circuit MX Park Auribail vous accueille tous les premiers dimanches du mois pour des sessions d'entraînement de motocross !</h6>
-    <div class="bg-sm-screen"></div>
+  
   </section>
 
-  <!-- ******** PAGE ******** CLUB -->
-  <section class="flex-section page" id="club">
-    <h2 class="h1 text-center mb-5">Le club en quelques mots</h2>
-    <div class="flex-container pageMobile">
+  <!-- ******** PAGE CLUB ********  -->
+  <section class="club" id="club">
+    <h2 class="h1 text-center my-5">Le club en quelques mots</h2>
+    <div class="container">
       <div class="row">
-        <div class="col-12 col-md-3 offset-md-2">
-          <img class="homepage-illustration" src="./build/homepage-illustration.jpg" >
+        <div class="col-12 col-md-4 offset-md-1 text-center">
+          <img class="club-illustration" src="./img/club-illustration.jpg" >
         </div>
-        <div class="col-12 col-md-4 text-justify">
+        <div class="col-12 col-md-5 text-justify">
           <p>Adrénaline et sensations fortes, vous craquez pour le Motocross ? Auribail MX Park vous accueille tous les premiers dimanches du mois pour des sessions inoubliables !</p>
           <p>Situé à moins de 30 minutes Toulouse, notre club dispose d'un circuit d'entraînement exceptionnel d'une longueur de 1950 mètres par 8 mètres de large avec une terre argileuse de grande qualité.</p>
-          <p>Nos entraîneurs mettent à disposition leur savoir et leur expérience pour apprendre la moto du plus jeunes aux plus âgés. Ils assurent un encadrement technique, sportif et un accompagnement sur toute la saison.</p>
+          <p>Nos entraîneurs mettent à disposition leur savoir et leur expérience pour apprendre la moto du plus jeunes aux plus âgés.</p>
           <p>Alors n'hésitez pas, inscrivez-vous dès maintenant pour la prochaine session !</p>
           <div class="text-center mt-4">
             <a href="#infos" class="btn btn-warning px-4">Plus d'infos</a>
@@ -127,29 +131,25 @@
         </div>
       </div>
     </div>
-    <div class="row my-scroll-down-arrow">
-      <div class="col-12 d-flex flex-column align-text-right">
-        <i class="fas fa-arrow-down p-1"></i>
-      </div>
-    </div>
+    
   </section>
 
   <!-- ******** PAGE INFOS ******** -->
-  <section class="container-fluid flex-section page super-light-bg" id="infos">
+  <section class="infos" id="infos">
     <div class="text-center mb-4">
       <h2 class="h1">Informations pratiques</h2>
     </div>
-    <div class="flex-container">
+    <div>
      
-      <div class="pageMobile text-center flex-divider mr-5">
+      <div class="text-center mr-5">
         <h3>Où nous trouver ?</h3>
-        <div class="flex-element">
+        <div>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63175.51148107438!2d1.340136726550057!3d43.343532766662754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aecfc42536a145%3A0xdde4829e36d4eed4!2sAuribail%20mx%20track!5e0!3m2!1sfr!2sfr!4v1651586425971!5m2!1sfr!2sfr" width="270" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
 
-      <div class="pl-5 pt-2 flex-divider">
-        <p class="pageMobile">
+      <div class="pl-5 pt-2">
+        <p>
           <strong>Commodités :</strong>
           <br/>
           Sanitaire, douche, club house, électricité, terrain technique et école de pilotage sont à disposition.
@@ -160,7 +160,7 @@
           Le 1er dimanche de chaque mois de 10h à 12h et de 14h à 18h.
         </p>
         <strong>A ne pas oublier :</strong>
-        <ul class="pageMobile">
+        <ul>
           <li>Respecter les consignes de sécurité lors de l'utilisation du terrain</li>
           <li>Mettre une tenue réglementaire, y compris un casque aux normes UE</li>
           <li>Avoir une licence
@@ -174,12 +174,12 @@
   </section>
 
   <!-- ******** PAGE EVENEMENT ******** -->
-  <section class="container page flex-section" id="evenement">
-    <div class="flex-container">
+  <section class="evenement container-fluid page" id="evenement">
+    <div>
     <h1 class="mb-5">Inscription au prochain évènement</h1>
       <div class="row">
 
-        <div class="col col-lg-3 flex-divider mt-5">
+        <div class="col col-lg-3 mt-5">
           <div class="icalendar text-center mr-3" id='hereData' data-date1='{{ event.0.date|date("Y/m/d") }}' data-date2='{{ kids.0.date|date("Y/m/d") }}' data-link1='{{ event.0.googleCalendarUrl }}' data-link2='{{ kids.0.googleCalendarUrl }}'>
             <div class="icalendar__month">
               <div class="icalendar__prev" onclick="moveDate('prev')">
@@ -220,13 +220,13 @@
         </div>
 
         <div class="col col-lg-6 flex-divider">
-          <div class="pageMobile text-center">
-            <p class="my-4 h5 pageMobile">Inscrivez-vous à la prochaine session d'entraînement !
+          <div class="text-center">
+            <p class="my-4 h5">Inscrivez-vous à la prochaine session d'entraînement !
               <br>
               Les membres du club sont prioritaires. Les enfants bénéficient d'une session dédiée.
             </p>
             {# <h2 class="mb-3 h6">LE PREMIER DIMANCHE DU MOIS</h2> #}
-            <div class="pageMobileCard flex-card mb-4">
+            <div class="flex-card mb-4">
             <div class="text-left mt-3 mr-3">
               <ul>
                 <li>Les inscriptions se font dans la limite des places disponibles.</li>
@@ -254,7 +254,7 @@
           </div>
           
         </div>
-        <div class="col-lg-3 pageMobile flex-divider d-flex align-content-center">
+        <div class="col-lg-3 flex-divider d-flex align-content-center">
           <div class="flex-card flex-gauge my-5 py-3">
             {% set percent = min(event.nbusers, 75) / 75 * 100 %}
             <div class="progress">
@@ -293,7 +293,7 @@
   </section>
 
   <!-- ******** PAGE CONTACT ******** -->
-  <section class="container-fluid page flex-section genius-light-bg pt-5" id="contact">
+  <section class="contact container-fluid pt-5" id="contact">
     <div class="mx-px-0">
     <div class="container">
         <h1 class="text-center my-3">Contactez-nous</h1>
@@ -302,7 +302,7 @@
         <div class="row">
           <div class="col-md-6 offset-md-2 mb-md-0 mb-5" id="contactForm">
             {{ form_start(formContact) }}
-            <div class="row pageMobile">
+            <div class="row">
               <div class="col-md-6 mb-2">
                 {{ form_label(formContact.firstName) }}
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
@@ -320,7 +320,7 @@
                 {% endif %}
               </div>
             </div>
-            <div class="row pageMobile">
+            <div class="row">
               <div class="col-md-12 mb-2">
                 {{ form_label(formContact.email) }}
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
@@ -336,7 +336,7 @@
                 {{ form_widget(formContact.subject) }}
               </div>
             </div>
-            <div class="row pageMobile">
+            <div class="row">
               <div class="col-md-12 mb-2">
                 {{ form_label(formContact.message) }}
                 {{ form_widget(formContact.message) }}
@@ -349,7 +349,7 @@
             <div class="status"></div>
             {{ form_end(formContact) }}
           </div>
-          <div class="col-md-3 text-center pageMobile">
+          <div class="col-md-3 text-center">
             <ul class="list-unstyled mt-5 mb-0">
               <li>
                 <i class="fas fa-map-marker-alt fa-2x mt-4"></i>
@@ -372,7 +372,7 @@
   </section>
 
   <!-- ******** FOOTER ******** -->
-  <footer class="page-footer my-footer bg-dark text-light py-3 w-100" id="myFooter">
+  <footer class="footer bg-dark text-light py-3 w-100" id="footer">
     <div class="container text-center">
       <div class="footer-copyright">
         Copyright © Motocross Auribail 2021</div>
@@ -384,7 +384,6 @@
 
 {% block modals %}
   <!-- ******** Modal for authentication ******** -->
-
   <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="Authentication modal" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
