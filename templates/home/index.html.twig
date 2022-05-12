@@ -117,16 +117,16 @@
     <h2 class="h1 text-center my-5">Le club en quelques mots</h2>
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-4 offset-md-1 text-center">
+        <div class="col-12 col-lg-4 offset-lg-1 text-center">
           <img class="club-illustration" src="./img/club-illustration.jpg" >
         </div>
-        <div class="col-12 col-md-5 text-justify">
+        <div class="col-12 col-lg-5 text-justify">
           <p>Adrénaline et sensations fortes, vous craquez pour le Motocross ? Auribail MX Park vous accueille tous les premiers dimanches du mois pour des sessions inoubliables !</p>
           <p>Situé à moins de 30 minutes Toulouse, notre club dispose d'un circuit d'entraînement exceptionnel d'une longueur de 1950 mètres par 8 mètres de large avec une terre argileuse de grande qualité.</p>
           <p>Nos entraîneurs mettent à disposition leur savoir et leur expérience pour apprendre la moto du plus jeunes aux plus âgés.</p>
           <p>Alors n'hésitez pas, inscrivez-vous dès maintenant pour la prochaine session !</p>
           <div class="text-center mt-4">
-            <a href="#infos" class="btn btn-warning px-4">Plus d'infos</a>
+            <a href="#infos" class="btn btn-warning mb-5 px-4">Plus d'infos</a>
           </div>
         </div>
       </div>
@@ -136,51 +136,50 @@
 
   <!-- ******** PAGE INFOS ******** -->
   <section class="infos" id="infos">
-    <div class="text-center mb-4">
-      <h2 class="h1">Informations pratiques</h2>
-    </div>
-    <div>
-     
-      <div class="text-center mr-5">
-        <h3>Où nous trouver ?</h3>
-        <div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63175.51148107438!2d1.340136726550057!3d43.343532766662754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aecfc42536a145%3A0xdde4829e36d4eed4!2sAuribail%20mx%20track!5e0!3m2!1sfr!2sfr!4v1651586425971!5m2!1sfr!2sfr" width="270" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <h2 class="h1 text-center my-5">Informations pratiques</h2>
+
+    <div class="container ">
+      <div class="row">
+        <div class="col-12 col-lg-4">
+          <h3 class="text-center">Où nous trouver ?</h3>
+          <div class="text-center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63175.51148107438!2d1.340136726550057!3d43.343532766662754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aecfc42536a145%3A0xdde4829e36d4eed4!2sAuribail%20mx%20track!5e0!3m2!1sfr!2sfr!4v1651586425971!5m2!1sfr!2sfr" width="270" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div class="pt-2">
+            <div>
+              <h3>Commodités</h3>
+              <p>Sanitaires, douches, club house, électricité, terrain technique et école de pilotage sont à disposition.</p>
+              <br/>
+              <h3>Horaires d'ouverture</h3>
+              <p>Le 1er dimanche de chaque mois de 10h à 12h et de 14h à 18h.</p>
+              <br/>
+            </div>
+            <h3>A ne pas oublier</h3>
+            <ul>
+              <li>Respecter les consignes de sécurité lors de l'utilisation du terrain</li>
+              <li>Mettre une tenue réglementaire, y compris un casque aux normes UE</li>
+              <li>Avoir une licence
+                <strong>à jour</strong>
+              </li>
+              <li>Venir avec sa bonne humeur :)</li>
+            </ul>
+          </div>
         </div>
       </div>
-
-      <div class="pl-5 pt-2">
-        <p>
-          <strong>Commodités :</strong>
-          <br/>
-          Sanitaire, douche, club house, électricité, terrain technique et école de pilotage sont à disposition.
-          <br/>
-          <br/>
-          <strong>Horaires d'ouverture :</strong>
-          <br/>
-          Le 1er dimanche de chaque mois de 10h à 12h et de 14h à 18h.
-        </p>
-        <strong>A ne pas oublier :</strong>
-        <ul>
-          <li>Respecter les consignes de sécurité lors de l'utilisation du terrain</li>
-          <li>Mettre une tenue réglementaire, y compris un casque aux normes UE</li>
-          <li>Avoir une licence
-            <strong>à jour</strong>
-          </li>
-          <li>Venir avec sa bonne humeur :)</li>
-        </ul>
-      </div>
-      
     </div>
+
   </section>
 
   <!-- ******** PAGE EVENEMENT ******** -->
-  <section class="evenement container-fluid page" id="evenement">
-    <div>
-    <h1 class="mb-5">Inscription au prochain évènement</h1>
+  <section class="evenement" id="evenement">
+    <h2 class="h1 text-center my-5">Inscription au prochain évènement</h2>
+    <div class="container">
       <div class="row">
-
-        <div class="col col-lg-3 mt-5">
-          <div class="icalendar text-center mr-3" id='hereData' data-date1='{{ event.0.date|date("Y/m/d") }}' data-date2='{{ kids.0.date|date("Y/m/d") }}' data-link1='{{ event.0.googleCalendarUrl }}' data-link2='{{ kids.0.googleCalendarUrl }}'>
+        <div class="col-12 col-lg-3">
+          <div class="icalendar text-center mt-5" id='hereData' data-date1='{{ event.0.date|date("Y/m/d") }}' data-date2='{{ kids.0.date|date("Y/m/d") }}' data-link1='{{ event.0.googleCalendarUrl }}' data-link2='{{ kids.0.googleCalendarUrl }}'>
             <div class="icalendar__month">
               <div class="icalendar__prev" onclick="moveDate('prev')">
                 <span>&#10094</span>
@@ -204,58 +203,42 @@
               <div>Dim</div>
             </div>
             <div class="icalendar__days"></div>
-
-        {# <div class="flex-footer">
-          {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-            {% if isThereSubs is empty %}
-              <button class="btn btn-primary" data-toggle="modal" data-target="#subsModal">S'inscrire</button>
-            {% else %}
-              <button class="btn btn-danger" data-toggle="modal" data-target="#unsubsModal">Se désinscrire</button>
-            {% endif %}
-          {% else %}
-            <button class="btn btn-primary" data-toggle="modal" data-target="#authModal">S'inscrire</button>
-          {% endif %}
-        </div> #}
-      </div>
+          </div>
         </div>
 
-        <div class="col col-lg-6 flex-divider">
-          <div class="text-center">
+        <div class="col-12 col-lg-6">
+          <div class="text-center px-3">
             <p class="my-4 h5">Inscrivez-vous à la prochaine session d'entraînement !
-              <br>
-              Les membres du club sont prioritaires. Les enfants bénéficient d'une session dédiée.
+            <br>
+            Les membres du club sont prioritaires. Les enfants bénéficient d'une session dédiée.
             </p>
-            {# <h2 class="mb-3 h6">LE PREMIER DIMANCHE DU MOIS</h2> #}
-            <div class="flex-card mb-4">
-            <div class="text-left mt-3 mr-3">
-              <ul>
-                <li>Les inscriptions se font dans la limite des places disponibles.</li>
-                <li>Seuls les membres de l'association pourront s'inscrire pendant les
-                  {% if not currentEvent is empty %}
-                    {% set firstDays = currentEvent.startMemberSubs - currentEvent.startAllSubs %}
-                    {{firstDays}}
-                  {% endif %}
-                  premiers jours.
-                <li>Un compte sur le site est nécessaire pour l'inscription.</li>
-                <li>Lors de l'inscription, les mineurs seront automatiquement dirigés vers l'entraînement Kid.</li>
-              </ul>
-            </div>
+            <ul class="text-justify px-5">
+              <li>Les inscriptions se font dans la limite des places disponibles.</li>
+              <li>Seuls les membres de l'association pourront s'inscrire pendant les
+                {% if not currentEvent is empty %}
+                  {% set firstDays = currentEvent.startMemberSubs - currentEvent.startAllSubs %}
+                  {{firstDays}}
+                {% endif %}
+                premiers jours.
+              <li>Un compte sur le site est nécessaire pour l'inscription.</li>
+              <li>Lors de l'inscription, les mineurs seront automatiquement dirigés vers l'entraînement Kid.</li>
+            </ul>
           </div>
+          <div class="text-center">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
               {% if isThereSubs is empty %}
-                <button class="btn btn-warning px-4" data-toggle="modal" data-target="#subsModal">S'inscrire à l'entraînement</button>
+                <button class="btn btn-warning px-4 mt-3" data-toggle="modal" data-target="#subsModal">S'inscrire à l'entraînement</button>
               {% else %}
-                <button class="btn btn-danger px-4" data-toggle="modal" data-target="#unsubsModal">Se désinscrire de l'entraînement</button>
+                <button class="btn btn-danger px-4 mt-3" data-toggle="modal" data-target="#unsubsModal">Se désinscrire de l'entraînement</button>
               {% endif %}
             {% else %}
-              <button class="btn btn-warning px-4" data-toggle="modal" data-target="#authModal">S'inscrire à l'entraînement</button>
+              <button class="btn btn-warning px-4 mt-3" data-toggle="modal" data-target="#authModal">S'inscrire à l'entraînement</button>
             {% endif %}
-            
           </div>
-          
         </div>
-        <div class="col-lg-3 flex-divider d-flex align-content-center">
-          <div class="flex-card flex-gauge my-5 py-3">
+        
+        <div class="event-gauge col-12 col-lg-3">
+          <div class="flex-card flex-gauge my-5 px-3">
             {% set percent = min(event.nbusers, 75) / 75 * 100 %}
             <div class="progress">
               <div class="progress-bar bg-warning" role="progressbar" style="width: {{ percent }}%" aria-valuenow="{{ event.nbusers }}" aria-valuemin="0" aria-valuemax="75"></div>
@@ -271,7 +254,7 @@
               </p>
             {% endif %}
           </div>
-          <div class="flex-card flex-gauge py-3">
+          <div class="flex-card flex-gauge px-3">
             {% set percentKids = min(kids.nbusers, 15) / 15 * 100 %}
             <div class="progress">
               <div class="progress-bar bg-warning" role="progressbar" style="width: {{ percentKids }}%" aria-valuenow="{{ kids.nbusers }}" aria-valuemin="0" aria-valuemax="15"></div>
@@ -290,17 +273,18 @@
         </div>
       </div>
     </div>
+    
   </section>
 
   <!-- ******** PAGE CONTACT ******** -->
-  <section class="contact container-fluid pt-5" id="contact">
+  <section class="contact" id="contact">
     <div class="mx-px-0">
     <div class="container">
-        <h1 class="text-center my-3">Contactez-nous</h1>
-        <h6 class="text-center mb-4">Besoin d'un renseignement ou d'un conseil ? N'hésitez pas à nous envoyer un message, nous vous répondrons rapidement.</h6>
+        <h1 class="text-center mt-5 mb-3">Contactez-nous</h1>
+        <p class="text-center">Besoin d'un renseignement ou d'un conseil ? N'hésitez pas à nous envoyer un message, nous vous répondrons rapidement.</p>
 
         <div class="row">
-          <div class="col-md-6 offset-md-2 mb-md-0 mb-5" id="contactForm">
+          <div class="col-md-6 offset-md-2 mb-md-0 mt-4 mb-3" id="contactForm">
             {{ form_start(formContact) }}
             <div class="row">
               <div class="col-md-6 mb-2">

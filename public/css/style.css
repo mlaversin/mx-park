@@ -5,13 +5,12 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 section {
   height: 100vh;
   padding-top: 68px;
-  border: 1px solid red;
 }
 
 .alert {
@@ -66,12 +65,13 @@ section {
 
 .club-illustration {
   height: 25rem;
+  padding-bottom: 30px;
 }
 
 /* ************** Infos section  ************** */
 
 .infos {
-  background-image: url("/img/background-3.webp");
+  background-image: url('/img/background-3.webp');
   background-attachment: fixed;
   background-position: bottom right;
   background-repeat: no-repeat;
@@ -88,7 +88,7 @@ section {
 /* ************** Contact section  ************** */
 
 .contact {
-  background-image: url("/img/background-2.webp");
+  background-image: url('/img/background-2.webp');
   background-size: cover;
   background-attachment: fixed;
   background-position: 20% 50%;
@@ -104,26 +104,51 @@ section {
 
 /* ************** Media Queries ************** */
 
+/* Large screens */
+@media screen and (max-width: 991px) {
+  section {
+    height: auto;
+  }
+  /* Event */
+  .icalendar {
+    margin: 0 auto;
+  }
+  .event-gauge {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Medium screens */
 @media screen and (max-width: 767px) {
   section {
-    height: unset;
+    height: auto;
   }
   .homepage .container {
     height: 15rem;
   }
 }
 
-@media only screen and (max-width: 767px) {
-  .homepage-illustration {
-    height: 500px;
-    width: 100%;
-    background-image: url("../img/bg-sm-screen.jpg");
-    background-repeat: no-repeat;
-    background-position: bottom right;
+/* Extra small screens */
+@media only screen and (max-width: 425px) {
+  .nav-logo {
+    max-height: 45px;
   }
-}
-@media only screen and (max-width: 470px) {
-  .homepage-illustration {
-    height: 450px;
+  section {
+    padding-top: 45px;
+  }
+  /* Homepage */
+  section.homepage {
+    height: 100vh;
+  }
+  .homepage h1 {
+    margin-top: 120px;
+  }
+  .homepage p {
+    margin-top: 60px;
+  }
+  .homepage h3 {
+    margin-bottom: 90px !important;
+    font-size: 22px;
   }
 }
