@@ -22,7 +22,7 @@
     <a class="nav-link" href="#infos" id="navinfo">Infos</a>
   </li>
   <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-    <a class="nav-link" href="#evenement" id="navevenement">Événement</a>
+    <a class="nav-link" href="#event" id="navevent">Événement</a>
   </li>
   <li class="nav-item mr-3" data-toggle="collapse" data-target=".navbar-collapse.show">
     <a class="nav-link" href="#contact" id="navcontact">Contact</a>
@@ -113,7 +113,7 @@
   </section>
 
   <!-- ******** PAGE CLUB ********  -->
-  <section class="club" id="club">
+  <section class="club d-flex flex-column justify-content-center" id="club">
     <h2 class="h1 text-center my-5">Le club en quelques mots</h2>
     <div class="container">
       <div class="row">
@@ -135,16 +135,16 @@
   </section>
 
   <!-- ******** PAGE INFOS ******** -->
-  <section class="infos" id="infos">
+  <section class="infos d-flex flex-column justify-content-center" id="infos">
 
     <h2 class="h1 text-center my-5">Informations pratiques</h2>
 
-    <div class="container ">
+    <div class="container">
       <div class="row">
         <div class="col-12 col-lg-4">
           <h3 class="text-center">Où nous trouver ?</h3>
           <div class="text-center">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63175.51148107438!2d1.340136726550057!3d43.343532766662754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aecfc42536a145%3A0xdde4829e36d4eed4!2sAuribail%20mx%20track!5e0!3m2!1sfr!2sfr!4v1651586425971!5m2!1sfr!2sfr" width="270" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="mb-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63175.51148107438!2d1.340136726550057!3d43.343532766662754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aecfc42536a145%3A0xdde4829e36d4eed4!2sAuribail%20mx%20track!5e0!3m2!1sfr!2sfr!4v1651586425971!5m2!1sfr!2sfr" width="270" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
         <div class="col-12 col-lg-8">
@@ -164,7 +164,7 @@
               <li>Avoir une licence
                 <strong>à jour</strong>
               </li>
-              <li>Venir avec sa bonne humeur :)</li>
+              <li class="mb-5">Venir avec sa bonne humeur :)</li>
             </ul>
           </div>
         </div>
@@ -173,13 +173,13 @@
 
   </section>
 
-  <!-- ******** PAGE EVENEMENT ******** -->
-  <section class="evenement" id="evenement">
+  <!-- ******** PAGE EVENT ******** -->
+  <section class="event d-flex flex-column justify-content-center" id="event">
     <h2 class="h1 text-center my-5">Inscription au prochain évènement</h2>
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-3">
-          <div class="icalendar text-center mt-5" id='hereData' data-date1='{{ event.0.date|date("Y/m/d") }}' data-date2='{{ kids.0.date|date("Y/m/d") }}' data-link1='{{ event.0.googleCalendarUrl }}' data-link2='{{ kids.0.googleCalendarUrl }}'>
+          <div class="icalendar text-center" id='hereData' data-date1='{{ event.0.date|date("Y/m/d") }}' data-date2='{{ kids.0.date|date("Y/m/d") }}' data-link1='{{ event.0.googleCalendarUrl }}' data-link2='{{ kids.0.googleCalendarUrl }}'>
             <div class="icalendar__month">
               <div class="icalendar__prev" onclick="moveDate('prev')">
                 <span>&#10094</span>
@@ -254,7 +254,7 @@
               </p>
             {% endif %}
           </div>
-          <div class="flex-card flex-gauge px-3">
+          <div class="flex-card flex-gauge my-5 px-3">
             {% set percentKids = min(kids.nbusers, 15) / 15 * 100 %}
             <div class="progress">
               <div class="progress-bar bg-warning" role="progressbar" style="width: {{ percentKids }}%" aria-valuenow="{{ kids.nbusers }}" aria-valuemin="0" aria-valuemax="15"></div>
@@ -277,7 +277,7 @@
   </section>
 
   <!-- ******** PAGE CONTACT ******** -->
-  <section class="contact" id="contact">
+  <section class="contact d-flex flex-column justify-content-center" id="contact">
     <div class="mx-px-0">
     <div class="container">
         <h1 class="text-center mt-5 mb-3">Contactez-nous</h1>
@@ -328,7 +328,7 @@
             </div>
             {{ form_rest(formContact) }}
             <div class="text-center form-group">
-              <button class="btn btn-warning px-4 mt-2">Envoyer le message</button>
+              <button class="btn btn-warning px-4 mt-2 mb-5">Envoyer le message</button>
             </div>
             <div class="status"></div>
             {{ form_end(formContact) }}
